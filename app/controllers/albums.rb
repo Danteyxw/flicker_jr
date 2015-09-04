@@ -1,3 +1,17 @@
+get "/albums/create" do
+  erb :create
+end
+
+post "/albums/create" do
+  title = parans[:title]
+  description = params[:description]
+  user = User.find_by(username: session[:user])
+
+  album = user.albums.create(title: title, description: description)
+
+  redirect "/albums/#{album.id}"
+end
+
 get "/albums/:album_id/delete" do
   @album = Album.find(params[:album_id])
 
