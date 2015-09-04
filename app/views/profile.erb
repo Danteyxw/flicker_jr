@@ -1,0 +1,18 @@
+<div class="container">
+  <h1><%= @user.username %></h1>
+
+  <div id="user_info">
+    <p id="fullname"><%= @user.fullname %></p>
+    <p id="email"><%= @user.email %></p>
+  </div>
+
+  <div class="albums">
+    <% @user.albums.each do |album| %>
+      <div class="album">
+        <div class="title"><%= album.title %></div>
+        <img class="cover" src="<%= album.photos.first.file %>" alt="<%= album.photos.first.identifier %>">
+        <div class="description"><%= album.description %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
