@@ -12,6 +12,7 @@
         <div class="title"><%= album.title %></div>
         <img class="cover" src="<%= album.photos.first.file %>" alt="<%= album.photos.first.identifier %>">
         <div class="description"><%= album.description %></div>
+        <a href="/albums/:album_id/delete">delete</a>
       </div>
     <% end %>
   </div>

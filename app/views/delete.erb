@@ -1,0 +1,8 @@
+<div class="container">
+  <h1><%= @album.title %></h1>
+  <p>Please enter your password to delete the album</p>
+  <form class="confirmation" action="/albums/:album_id/delete" method="post">
+    <input name="password" type="text" placeholder="password">
+    <input type="submit" value="submit">
+  </form>
+</div>
