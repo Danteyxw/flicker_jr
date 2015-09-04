@@ -2,8 +2,14 @@ get "/albums/create" do
   erb :create
 end
 
+get "/albums/:album_id" do
+  @album = Album.find(params[:album_id])
+
+  erb :album
+end
+
 post "/albums/create" do
-  title = parans[:title]
+  title = params[:title]
   description = params[:description]
   user = User.find_by(username: session[:user])
 

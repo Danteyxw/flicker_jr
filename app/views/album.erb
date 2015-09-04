@@ -1,0 +1,19 @@
+<div class="container">
+  <h1><%= @album.title %></h1>
+
+  <div class="album_info">
+    <p id="timestamps">Created at: <%= @album.created_at %> Last Update: <%= @album.updated_at %></p>
+    <p id="description"><%= @album.description %></p>
+  </div>
+
+  <div class="photos">
+    <% @album.photos.each do |photo| %>
+      <figure>
+        <a href="/albums/#{@album.id}/#{photo.id}">
+          <img src="<%= photo.file %>" alt="<%= photo.identifier %>">
+          <figcaption><%= photo.caption %></figcaption>
+        </a>
+      </figure>
+    <% end %>
+  </div>
+</div>
