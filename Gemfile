@@ -17,6 +17,9 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'carrierwave'
+gem 'mini_magick'
+
 group :test do
   gem 'faker'
   gem 'rspec'
